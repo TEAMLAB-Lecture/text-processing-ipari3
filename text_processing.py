@@ -35,7 +35,6 @@ def normalize(input_string):
     """
     normalized_string = input_string.strip()
     normalized_string = normalized_string.split(' ')
-    print(normalized_string)
     normalized_string = ' '.join([word for word in normalized_string if word != ''])
     return normalized_string.lower() # 문자는 모두 알파벳이라고 가정
 
@@ -61,7 +60,7 @@ def no_vowels(input_string):
             >>> tp.normalize(input_string2)
             ''W lv Pythn!'
     """
-    vowels = {'a', 'e', 'i', 'o', 'u'}
+    vowels = {'a', 'e', 'i', 'o', 'u', 'A', 'E', 'I', 'O', 'U'}
     no_vowel_string = []
     for ch in input_string:
         if ch not in vowels:
