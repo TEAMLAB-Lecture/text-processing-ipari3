@@ -33,8 +33,11 @@ def normalize(input_string):
              >>> tp.normalize(input_string2)
              'extra space'
     """
-    normalized_string = None
-    return normalized_string
+    normalized_string = input_string.strip()
+    normalized_string = normalized_string.split(' ')
+    print(normalized_string)
+    normalized_string = ' '.join([word for word in normalized_string if word != ''])
+    return normalized_string.lower() # 문자는 모두 알파벳이라고 가정
 
 
 def no_vowels(input_string):
@@ -58,5 +61,9 @@ def no_vowels(input_string):
             >>> tp.normalize(input_string2)
             ''W lv Pythn!'
     """
-    no_vowel_string = None
-    return no_vowel_string
+    vowels = {'a', 'e', 'i', 'o', 'u'}
+    no_vowel_string = []
+    for ch in input_string:
+        if ch not in vowels:
+            no_vowel_string.append(ch)
+    return ''.join(no_vowel_string)
